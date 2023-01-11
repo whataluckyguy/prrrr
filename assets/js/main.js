@@ -1,5 +1,3 @@
-const Primus = require("primus");
-
 // DOM Reference.
 var clickArea = document.querySelector(".click-area");
 var introText = document.querySelector(".intro-text");
@@ -8,11 +6,13 @@ var audioContext =
     ? new AudioContext()
     : new webkitAudioContext();
 
-// listen for data fro ws
-const ws = new Primus("ws://192.168.0.104:3000/primus");
-// const ws = new Primus("ws://localhost:3000/primus");
+// define primus
+// var Primus = require("primus");
+
+// Setup the websocket connection.
+var ws = new Primus("http://127.0.0.1:8000/primus");
 ws.on("data", (data) => {
-  playAudioVisual(data.x, data.y, data.color);
+  playAudioVisual(data.x, data.y, "green");
 });
 
 // Handle all clicks on the click area.
@@ -22,7 +22,7 @@ clickArea.addEventListener(
     unlockMobile();
 
     // Place color dot in this location.
-    // playAudioVisual(event.x, event.y, "blue");
+    // playAudioVisual(event.x, event.y, 'blue');
     ws.write({ x: event.x, y: event.y });
 
     // Hide the intro text.
