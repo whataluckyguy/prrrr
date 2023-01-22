@@ -1,10 +1,10 @@
 {
-  "name": "Horizontally-Scaling-Node.js-Websockets-Talk",
-  "description": "Talk about horizontally scaling node.js and WebSockets given at Connect.Tech 2016 and Thunder Plains 2016.",
-  "author": "James Simpson <james@goldfirestudios.com> (http://goldfirestudios.com)",
+  "name": "Load_balancing_nodejs_and_WebSockets",
+  "description": "",
+  "author": "Lalit Kumar",
   "repository": {
     "type": "git",
-    "url": "git://github.com/goldfire/Horizontally-Scaling-Node.js-Websockets-Talk.git"
+    "url": "https://github.com/whataluckyguy/prrrr.git"
   },
   "dependencies": {
     "democracy": "^3.1.3",
